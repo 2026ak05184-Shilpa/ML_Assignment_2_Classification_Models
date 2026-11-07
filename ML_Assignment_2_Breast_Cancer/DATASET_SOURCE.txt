@@ -1,0 +1,4 @@
+UCI Machine Learning Repository – Breast Cancer Wisconsin (Diagnostic)
+https://archive.ics.uci.edu/dataset/17/breast-cancer-wisconsin-diagnostic
+569 instances; 30 numeric features; binary diagnosis target.
+The dataset CSV in data/dataset.csv is included for reproducibility.
