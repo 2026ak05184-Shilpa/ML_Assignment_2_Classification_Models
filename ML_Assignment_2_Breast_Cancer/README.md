@@ -1,4 +1,4 @@
-# Breast Cancer Classification – ML Assignment 2
+# Breast Cancer Classification Using Machine Learning
 
 ## a. Problem statement
 Build and compare five supervised classification models to classify breast tumour observations as malignant (M) or benign (B), and provide an interactive Streamlit application for evaluating saved models on labelled test data.
@@ -14,52 +14,32 @@ Build and compare five supervised classification models to classify breast tumou
 - The dataset features are computed from digitized fine needle aspirate images and describe cell-nuclei characteristics.
 
 ## c. GitHub Repository Link
-Replace this line with your own repository URL after uploading:
-`[PASTE YOUR GITHUB REPOSITORY URL HERE]`
+https://github.com/2026ak05184-Shilpa/ML_Assignment_2_Classification_Models/tree/main/ML_Assignment_2_Breast_Cancer
 
 ## d. Models used and evaluation metrics
-The five models are Logistic Regression, Decision Tree, K-Nearest Neighbors, Gaussian Naive Bayes and Support Vector Machine.
+The five machine learning models were evaluated using the same test dataset. 
+The following six performance metrics were calculated: Accuracy, AUC, Precision, Recall, F1 Score, and Matthews Correlation Coefficient (MCC).
 
-Run `python train_models.py` to generate the results. Copy the actual values from `metrics_summary.csv` into the table below.
-
-| ML Model | Accuracy | AUC | Precision | Recall | F1 | MCC |
+| Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
 |---|---:|---:|---:|---:|---:|---:|
-| Logistic Regression | | | | | | |
-| Decision Tree | | | | | | |
-| KNN | | | | | | |
-| Naive Bayes | | | | | | |
-| Support Vector Machine | | | | | | |
+| Logistic Regression | 0.9649 | 0.9960 | 0.9750 | 0.9286 | 0.9512 | 0.9245 |
+| Decision Tree | 0.9211 | 0.9448 | 0.9459 | 0.8333 | 0.8861 | 0.8299 |
+| K-Nearest Neighbors | 0.9561 | 0.9823 | 0.9744 | 0.9048 | 0.9383 | 0.9058 |
+| Gaussian Naive Bayes | 0.9386 | 0.9934 | 1.0000 | 0.8333 | 0.9091 | 0.8715 |
+| Support Vector Machine | 0.9737 | 0.9947 | 1.0000 | 0.9286 | 0.9630 | 0.9442 |
 
-### Observations on model performance
-Write observations using the actual metric values after running the experiment. Compare:
-- Accuracy: overall proportion of correct predictions.
-- AUC: ability to distinguish malignant and benign cases across thresholds.
-- Precision: proportion of predicted malignant cases that are actually malignant.
-- Recall: proportion of actual malignant cases correctly identified.
-- F1: harmonic mean of precision and recall.
-- MCC: balanced correlation measure using all confusion-matrix categories.
+### Observations about model performance
 
-| Model | Observation |
-|---|---|
-| Logistic Regression | Complete after reviewing the measured metrics. |
-| Decision Tree | Complete after reviewing the measured metrics. |
-| KNN | Complete after reviewing the measured metrics. |
-| Naive Bayes | Complete after reviewing the measured metrics. |
-| Support Vector Machine | Complete after reviewing the measured metrics. |
+1. **Logistic Regression:** Achieved high accuracy and the highest AUC score of 0.9960, indicating excellent classification performance.
 
-**Overall winner:** Select the model based on the metric priorities and actual test results. For this medical classification example, discuss malignant-class recall and AUC alongside the other metrics rather than relying on accuracy alone.
+2. **Decision Tree:** Achieved an accuracy of 0.9211. It provides interpretable decision rules but performed comparatively lower than the other models.
 
-## Streamlit app
-The app supports CSV upload, model selection, six evaluation metrics, confusion matrix and classification report. It loads saved models and does not retrain on the uploaded test data.
+3. **K-Nearest Neighbors:** Achieved an accuracy of 0.9561 and demonstrated good classification performance.
 
-After deployment, paste the live app URL here:
-`[PASTE YOUR STREAMLIT APP URL HERE]`
+4. **Gaussian Naive Bayes:** Achieved perfect precision of 1.0000 but had a relatively lower recall of 0.8333.
 
-## How to run
-1. Install dependencies: `pip install -r requirements.txt`
-2. Run training: `python train_models.py`
-3. Launch the app: `streamlit run app.py`
-4. Upload `test_data.csv` in the app.
+5. **Support Vector Machine:** Achieved the highest accuracy of 0.9737, highest F1 score of 0.9630, and highest MCC of 0.9442.
 
-## Reproducibility
-The train/test split uses `test_size=0.20`, `random_state=42`, and stratification by target. StandardScaler is included in the Logistic Regression, KNN and SVM pipelines to ensure preprocessing is applied consistently at training and inference time.
+### Overall Best Model
+
+Support Vector Machine (SVM) performed best overall based on accuracy, F1 score, precision, recall, and MCC. Logistic Regression achieved the highest AUC score. Therefore, SVM is selected as the best-performing model for this dataset based on the overall evaluation results.
